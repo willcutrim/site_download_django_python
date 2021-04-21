@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Download de vídeos</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Converter Fotos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Converter Arquivos</a>
+        </li>
+    </div>
+  </div>
+</nav>
+
+<!-- nav bar termina aqui -->
+
+<!-- Começo da tabela -->
+<div class="container">
+
+<!--video -->
+<!--<center><h2> {{h}} {{titulo}}</h2></center>-->
+
+<center>
+<p>{{aviso}}</p>
+<figure class="figure">
+  <img src="{{thumbnail}}" class="figure-img img-fluid rounded">
+  <figcaption class="figure-caption">{{titulo}}</figcaption>
+</figure>
+  <!--<iframe class="embed-responsive-item" src={{ thumbnail }}></iframe>-->
+  <!---<img src="{{thumbnail}}" class="img-fluid">-->
+  <form action="{{home}}">
+    <center>
+      <button type="submit" class="btn btn-primary">Voltar</button>
+    </center>
+  </form>
+</center>
+</div>
+<!--video -->
+
+
+{% endblock content %}
