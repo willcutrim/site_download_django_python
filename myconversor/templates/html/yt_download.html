@@ -28,14 +28,14 @@
 <!--<center><h2> {{h}} {{titulo}}</h2></center>-->
 
 <center>
-<p>{{aviso}}</p>
+<h2>{{alerta}}</h2>
 <figure class="figure">
   <img src="{{thumbnail}}" class="figure-img img-fluid rounded">
   <figcaption class="figure-caption">{{titulo}}</figcaption>
 </figure>
   <!--<iframe class="embed-responsive-item" src={{ thumbnail }}></iframe>-->
   <!---<img src="{{thumbnail}}" class="img-fluid">-->
-  <form action="{{home}}">
+  <form action="{% url 'home' %}">
     <center>
       <button type="submit" class="btn btn-primary">Voltar</button>
     </center>

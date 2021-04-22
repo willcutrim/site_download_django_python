@@ -22,11 +22,9 @@ def yt_download(request):
         thumbnail = obj.thumbnail_url
         titulo = obj.title
         strm_all = obj.streams.filter()
-        video_id = url
-        time.sleep(3)
-        aviso = "Download começou!"
+        alerta = "Download concluído..."
         down = strm_all.first().download(r'C:\Users\willyam cutrim/Downloads')
-
+        return render(request, 'html/yt_download.html', {'thumbnail': thumbnail, 'titulo': titulo, 'h': h, 'strm_all': strm_all, 'down': down, 'alerta': alerta})
         
 #down': down,
         
@@ -36,7 +34,4 @@ def yt_download(request):
         resolucao = list(dict.fromkeys(resolucao))
         resolucao.remove(None)
         ordem = resolucao.sort(reverse=True)"""
-
-        return render(request, 'html/yt_download.html', {'thumbnail': thumbnail, 'titulo': titulo, 'strm_all': strm_all, 'h': h, 'down': down, 'aviso': aviso})
-
 

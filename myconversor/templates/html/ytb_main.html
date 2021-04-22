@@ -24,7 +24,7 @@
 <!-- nav bar termina aqui -->
 
 <!-- Input do link -->
-    <form method="get" action="download">
+    <form method="get" action="{% url 'download'%}">
     <div class="container">
     {% csrf_token %}
         <br><br>
@@ -36,7 +36,7 @@
         </div>
         <center>
         
-        <button type="submit" class="btn btn-primary">Buscar</button>
+        <button type="submit" class="btn btn-primary">Download</button>
         </center>
     </div>
     
