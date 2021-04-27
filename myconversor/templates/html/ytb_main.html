@@ -24,9 +24,8 @@
 <!-- nav bar termina aqui -->
 
 <!-- Input do link -->
-    <form method="get" action="{% url 'download'%}">
+    <form method="get" action="download"> {% csrf_token %}
     <div class="container">
-    {% csrf_token %}
         <br><br>
         <center> <h1> Cole o Link do Vídeo</h1></center>
         <br>
@@ -41,6 +40,7 @@
     </div>
     
     </form>
+    
 <!-- termina aqui o input do Link -->
 
 <br><br>
