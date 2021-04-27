@@ -34,7 +34,7 @@ def yt_download(request):
             titulo = obj.title
             strm_all = obj.streams.filter()
             alerta = "Download concluído..."
-            #down = strm_all.first().download(paht_video)
+            down = strm_all.first().download(paht_video)
         else:
             return redirect('/')
             
