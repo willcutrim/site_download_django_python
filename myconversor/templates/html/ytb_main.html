@@ -2,7 +2,6 @@
 {% block content %}
 
 <!-- nav bar começa aqui -->
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Download de vídeos</a>
@@ -20,8 +19,8 @@
     </div>
   </div>
 </nav>
-
 <!-- nav bar termina aqui -->
+
 
 <!-- Input do link -->
     <form method="get" action="download"> {% csrf_token %}
@@ -35,14 +34,13 @@
         </div>
         <center>
         
-        <button type="submit" class="btn btn-primary">Download</button>
+        <button type="submit" class="btn btn-primary" formmethod='get'>Download</button>
         </center>
     </div>
     
     </form>
-    
+    {{alert}}
 <!-- termina aqui o input do Link -->
-
 <br><br>
 
 
