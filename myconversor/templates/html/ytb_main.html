@@ -29,17 +29,18 @@
         <center> <h1> Cole o Link do Vídeo</h1></center>
         <br>
         <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon3">https://examplo.com</span>
-        <input name="url" type="text" class="form-control" id="link" aria-describedby="basic-addon3" placeholder="Link do Vídeo">
-        </div>
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">https://examplo.com</span>
+          </div>
+          {{ form.link }}
+          <!--<input name="link" type="text" class="form-control" id="link" aria-describedby="basic-addon3" placeholder="Link do Vídeo" value= >-->
+          </div>
         <center>
         
-        <button type="submit" class="btn btn-primary" formmethod='get'>Download</button>
+        <button type="search" class="btn btn-primary" formmethod='get'>Download</button>
         </center>
     </div>
-    
     </form>
-    {{alert}}
 <!-- termina aqui o input do Link -->
 <br><br>
 

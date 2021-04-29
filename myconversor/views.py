@@ -8,34 +8,34 @@ import time
 from pathlib import Path
 from django.core.validators import URLValidator
 import urllib
+from .forms import LinkForm
 
 
 
 def ytb_down(request):
-    return render(request, 'html/ytb_main.html')
+    form = LinkForm(request.GET)
+    if form.is_valid():
+        return redirect('download')
+    return render(request, 'html/ytb_main.html', {'form': form})
 
 
 
     
 def yt_download(request):
-    if request.method == "GET":
-        url = request.GET.get('url')
-        try:
-            home = Path.home()
-            paht_video = home / 'Downloads'
-            url = request.GET.get('url')
-            obj = YouTube(url)
-            h = "Título:"
-                #resolucao = []
-            thumbnail = obj.thumbnail_url
-            titulo = obj.title
-            strm_all = obj.streams.filter()
-            alerta = "Download concluído..."
-            down = strm_all.first().download(paht_video)
-        except:
-            return redirect('/')
-        return render(request, 'html/yt_download.html', {'thumbnail': thumbnail, 'titulo': titulo, 'h': h, 'strm_all': strm_all, 'alerta': alerta})
-    else:
-        render(request, 'html/ytb_main.html')
+
+    home = Path.home()
+    paht_video = home / 'Downloads'
+    url = request.GET.get('link')
+    obj = YouTube(url)
+    h = "Título:"
+    #resolucao = []
+    thumbnail = obj.thumbnail_url
+    titulo = obj.title
+    strm_all = obj.streams.filter()
+    alerta = "Download concluído..."
+    down = strm_all.first().download(paht_video)
+
+    return render(request, 'html/yt_download.html', {'thumbnail': thumbnail, 'titulo': titulo, 'h': h, 'strm_all': strm_all, 'alerta': alerta})
+    
         
 
