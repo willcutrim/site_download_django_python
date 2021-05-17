@@ -1,6 +1,6 @@
 import environ
 
-from siteconversor.settings.base import *
+from sitedownload.settings.base import *
 
 env = environ.Env()
 
