@@ -1,39 +1,34 @@
 {% extends 'base.html'%}
-
+{% block title %} Download Concluído {% endblock title%}
 {% block content %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Download de vídeos</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+        <a class="navbar-brand" href="{% url 'home' %}">
+        <img img src="static/img/youtube.png" width="30" height="30" class="d-inline-block align-top" alt="{% url 'home'%}">
+        Download from YouTube video
+        </a>
+        </div>
+      </header>
+
+  
+  <center>
+    <h2>{{alerta}}</h2>
+    <figure class="figure">
+      <img src="{{thumbnail}}" class="figure-img img-fluid rounded">
+      <figcaption class="figure-caption">{{titulo}}</figcaption>
+    </figure>
+    <!--<iframe class="embed-responsive-item" src={{ thumbnail }}></iframe>-->
+    <!---<img src="{{thumbnail}}" class="img-fluid">-->
+    <form action="{% url 'home' %}">
+      <center>
+        <button type="submit" class="btn btn-primary">Voltar</button>
+      </center>
+    </form>
+  </center>
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <center><a href="https://www.linkedin.com/in/willyam-cutrim-6584b8161/">Linkedin</a>, by <a href="https://www.instagram.com/wilinha.py/">@wilinha.py</a></center>
+      </footer>
     </div>
-  </div>
-</nav>
-
-<!-- nav bar termina aqui -->
-
-<!-- Começo da tabela -->
-<div class="container">
-
-<!--video -->
-<!--<center><h2> {{h}} {{titulo}}</h2></center>-->
-
-<center>
-<h2>{{alerta}}</h2>
-<figure class="figure">
-  <img src="{{thumbnail}}" class="figure-img img-fluid rounded">
-  <figcaption class="figure-caption">{{titulo}}</figcaption>
-</figure>
-  <!--<iframe class="embed-responsive-item" src={{ thumbnail }}></iframe>-->
-  <!---<img src="{{thumbnail}}" class="img-fluid">-->
-  <form action="{% url 'home' %}">
-    <center>
-      <button type="submit" class="btn btn-primary">Voltar</button>
-    </center>
-  </form>
-</center>
-</div>
-<!--video -->
-
 {% endblock content %}

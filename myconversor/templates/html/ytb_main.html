@@ -1,22 +1,22 @@
 {% extends 'base.html'%}
+{% block title %} Home {% endblock title%}
 {% block content %}
-
 <!-- nav bar começa aqui -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Download de vídeos</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-</nav>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+        <a class="navbar-brand" href="{% url 'home' %}">
+        <img img src="static/img/youtube.png" width="30" height="30" class="d-inline-block align-top" alt="{% url 'home'%}">
+        Download from YouTube video
+        </a>
+        </div>
+      </header>
 <!-- nav bar termina aqui -->
 
 
 <!-- Input do link -->
     <form method="get" action="download"> {% csrf_token %}
     <div class="container">
-        <br><br>
         <center><h1> Cole o Link do Vídeo</h1></center>
         <ul>
             <li>Cole o link do vídeo</li>
@@ -40,13 +40,10 @@
             <div class="row video">
                 <h5>Resoluções:</h5>
                 <div class="col-sm-2">
-                  <label><input type="radio" name="qualityRadio" value="1080p"> Alta</label>
+                  <label><input type="radio" name="qualityRadio" value="720p"> 720p</label>
                 </div>
                 <div class="col-sm-2">
-                  <label><input type="radio" name="qualityRadio" value="720p"> Média</label>
-                </div>
-                <div class="col-sm-2">
-                  <label><input type="radio" name="qualityRadio" value="360p"> Baixa</label>
+                  <label><input type="radio" name="qualityRadio" value="360p"> 360p</label>
                 </div>
                 <div class="col-sm-2">
                   <label><input type="radio" name="qualityRadio" value="audio"> Áudio</label>
@@ -55,9 +52,10 @@
     </div>
     </form>
 <!-- termina aqui o input do Link -->
-<br><br>
-
-
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <center><a href="https://www.linkedin.com/in/willyam-cutrim-6584b8161/">Linkedin</a>, by <a href="https://www.instagram.com/wilinha.py/">@wilinha.py</a></center>
+      </footer>
 <!-- https://www.youtube.com/watch?v=ecxkW9NIonI -->
 
 {% endblock content %}
